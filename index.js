@@ -26,4 +26,8 @@ app.get(podlet.manifest(), (req, res) => {
     res.status(200).send(podlet);
 });
 
+app.get(podlet.fallback(), (req, res) => {
+    res.status(200).podiumSend("<div>It didn't work :(</div>");
+});
+
 app.listen(7100);
